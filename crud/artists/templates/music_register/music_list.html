@@ -1,0 +1,40 @@
+{% extends "music_register/base.html" %}
+
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Title</td>
+            <td>Duration</td>
+            <td>Author</td>
+            <td>
+                <a href="{% url 'music_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Music in music_list %}
+            <tr>
+                <td>{{Music.title}}</td>
+                <td>{{Music.duration}}</td>
+                <td>{{Music.foreign_key}}</td>
+                <td>
+                    <a href="{% url 'music_update' Music.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'music_delete' Music.id%}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
