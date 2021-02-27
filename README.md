@@ -1,5 +1,6 @@
 # Onidevs Challenge 
 - Participant: Joao Victor Ferreira
+- **IMPORTANT:** For technical explanation about the project code and access routes, please [CLICK HERE](https://github.com/kizzcross/OniDevs-Challenge/blob/master/TECHNICAL.md) for access the technical markdown.
 
 ## Requirements for build/execute:
 - [Docker](https://docs.docker.com/get-docker/) (Lastest Version)
@@ -24,6 +25,13 @@ If you don`t want an runtime console of Django envroiment, you can use the flag 
 ```
 docker-compose up -d
 ```
+
+## How to access the project page
+
+The project page is listened on port ```8000```, you can access with the link: [localhost:8000](http://localhost:8000). 
+To acccess the Django Admin page, the link is: [localhost:8000/admin](http://localhost:8000/admin).
+
+The credentials of admin user access is ```admin:admin (user:password)```.
 
 ## Python Packages that i used
 
